@@ -14,6 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>3.141.59</selenium.version>
         <driver.manager>5.5.3</driver.manager>
+        <testing>6.14.3</testing>
+
     </properties>
 
     <dependencies>
@@ -28,6 +30,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${driver.manager}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testing}</version>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 
