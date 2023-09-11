@@ -1,20 +1,23 @@
+import Listeners.RetryAnalyzer;
+import org.assertj.core.api.SoftAssertions;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import po.ArticlePage;
 import po.SearchPage;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.*;
 
 public class SearchTest extends BaseTest {
-
-    SearchPage search = new SearchPage();
     ArticlePage article = new ArticlePage();
 
 
-    @Test
-    void shouldBeVisibleResultText() {
-        search.clickOnTabHistory();
-        search.fillText("Odessa");
-        search.enterSearch();
+    @Test (groups = {"All"}, dataProvider = "data-test")
+    void shouldBeVisibleResultText(String result) {
+        new SearchPage()
+            .clickOnTabHistory()
+            .fillText(result)
+            .enterSearch();
 //        search.click("//div[@id='mw-content-text']//ul[@class='mw-search-results']/li[1]//div[@class='mw-search-result-heading']/a");
 
 //        assertEquals("Ubisoft", article.getTitleArticle());
@@ -24,14 +27,41 @@ public class SearchTest extends BaseTest {
 //            search.clickOnFirstResult();
 //            assertEquals(search.getTitle(), "Ubisoft");
 //        }
+        assertThat(new SearchPage().getTitle())
+                .as("The result of test is appeared")
+                .isEqualTo("Результаты поиска");
     }
-        @Test
+        @Test(groups = {"All"})
         void shouldBeVisibleResultTextUbisoft() {
-            search.clickOnTabHistory();
-            search.fillText("Ubisoft");
-            search.enterSearch();
+            new SearchPage()
+                .clickOnTabHistory()
+                .fillText("Ubis")
+                .enterSearch();
 //        search.click("//div[@id='mw-content-text']//ul[@class='mw-search-results']/li[1]//div[@class='mw-search-result-heading']/a");
 
-            assertEquals("Ubisoft", article.getTitleArticle());
+
+
+            SoftAssertions softly = new SoftAssertions();
+
+//            softly.assertThat(new SearchPage().getTitle())
+//                    .as("The result of test is appeared")
+//                    .isEqualTo("Результаты поиска11");
+
+            softly.assertThat(new SearchPage().getTitle())
+                    .as("The result of test is appeared")
+                    .isEqualTo("Результаты поиска");
+
+            softly.assertAll();
+
+    }
+
+
+    @DataProvider(name = "data-test")
+    public  Object[][] getResult(){
+        return new Object[][] {
+                {"Odessa"},
+                {"Ubisoft"},
+                {"Результаты поиска2"}
+        };
     }
 }

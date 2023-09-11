@@ -11,7 +11,7 @@ public class LoginPage extends BaseMethod {
    public final By enterPassword = By.xpath("//input[@id='wpPassword1']");
    public final By buttonEnter = By.xpath("//button[@id='wpLoginAttempt']");
 
-   public String getLogin() {
+   public String getLogin1() {
       return getTextFromElement(loginName);
    }
       public void clickEnterPage() {
