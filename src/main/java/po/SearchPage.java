@@ -15,24 +15,24 @@ public class SearchPage extends BaseMethod {
     }
 
 
-    public void clickOnTabHistory() {
-
+    public SearchPage clickOnTabHistory() {
         click(history, 10);
+        return this;
     }
 
-    public void clickOnFirstResult() {
-
+    public SearchPage clickOnFirstResult() {
         click(tabFirst, 10);
+        return this;
     }
 
-    public void fillText(String text) {
-
+    public SearchPage fillText(String text) {
         send(search, text);
+        return this;
     }
 
-    public void enterSearch() {
-
+    public SearchPage enterSearch() {
         clickEnter(search);
+        return this;
     }
     public String getTitle() {
         return getTextFromElement(result);
