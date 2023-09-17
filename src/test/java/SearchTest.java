@@ -9,11 +9,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.*;
 
 public class SearchTest extends BaseTest {
+
     ArticlePage article = new ArticlePage();
 
 
     @Test (groups = {"All"}, dataProvider = "data-test")
     void shouldBeVisibleResultText(String result) {
+        driver.get("https://ru.wikipedia.org/");
+        driver.manage().window().maximize();
         new SearchPage()
             .clickOnTabHistory()
             .fillText(result)
@@ -33,6 +36,8 @@ public class SearchTest extends BaseTest {
     }
         @Test(groups = {"All"})
         void shouldBeVisibleResultTextUbisoft() {
+            driver.get("https://ru.wikipedia.org/");
+            driver.manage().window().maximize();
             new SearchPage()
                 .clickOnTabHistory()
                 .fillText("Ubis")
