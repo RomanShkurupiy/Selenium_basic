@@ -1,15 +1,12 @@
 package selenide;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import org.openqa.selenium.Dimension;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import selenide.po.SearchPage;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.getWebDriverLogs;
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
