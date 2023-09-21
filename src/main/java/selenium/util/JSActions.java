@@ -1,11 +1,9 @@
-package util;
+package selenium.util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import static config.WebDriverInit.getDriver;
+import static selenium.config.WebDriverInit.getDriver;
 
 public class JSActions {
     public static void jsClick(WebElement element) {

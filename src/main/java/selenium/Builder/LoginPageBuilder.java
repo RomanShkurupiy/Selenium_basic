@@ -1,6 +1,6 @@
-package Builder;
+package selenium.Builder;
 
-import po.LoginNewPage;
+import selenium.po.LoginNewPage;
 
 public class LoginPageBuilder {
     private String username;

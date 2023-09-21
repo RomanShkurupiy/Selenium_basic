@@ -1,5 +1,7 @@
+package selenium;
+
 import org.testng.annotations.Test;
-import po.LoginPage;
+import selenium.po.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 

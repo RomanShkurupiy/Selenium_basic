@@ -1,9 +1,10 @@
-import org.assertj.core.api.ProxyableObjectAssert;
+package selenium;
+
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import po.ActionPage;
+import selenium.po.ActionPage;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

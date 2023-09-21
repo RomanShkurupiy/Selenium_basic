@@ -1,16 +1,16 @@
-import Listeners.RetryAnalyzer;
+package selenium;
+
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import po.ArticlePage;
-import po.SearchPage;
+import selenium.po.ArticlePage;
+import selenium.po.SearchPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.testng.Assert.*;
 
 public class SearchTest extends BaseTest {
 
-    ArticlePage article = new ArticlePage();
+//    ArticlePage article = new ArticlePage();
 
 
     @Test (groups = {"All"}, dataProvider = "data-test")
@@ -21,15 +21,6 @@ public class SearchTest extends BaseTest {
             .clickOnTabHistory()
             .fillText(result)
             .enterSearch();
-//        search.click("//div[@id='mw-content-text']//ul[@class='mw-search-results']/li[1]//div[@class='mw-search-result-heading']/a");
-
-//        assertEquals("Ubisoft", article.getTitleArticle());
-//        try {
-//            assertEquals(search.getTitle(), "Ubisoft");
-//        } catch (AssertionError e) {
-//            search.clickOnFirstResult();
-//            assertEquals(search.getTitle(), "Ubisoft");
-//        }
         assertThat(new SearchPage().getTitle())
                 .as("The result of test is appeared")
                 .isEqualTo("Результаты поиска");
@@ -47,10 +38,6 @@ public class SearchTest extends BaseTest {
 
 
             SoftAssertions softly = new SoftAssertions();
-
-//            softly.assertThat(new SearchPage().getTitle())
-//                    .as("The result of test is appeared")
-//                    .isEqualTo("Результаты поиска11");
 
             softly.assertThat(new SearchPage().getTitle())
                     .as("The result of test is appeared")

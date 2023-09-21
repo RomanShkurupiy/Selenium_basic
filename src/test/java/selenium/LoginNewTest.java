@@ -1,7 +1,9 @@
-import Builder.LoginPageBuilder;
+package selenium;
+
+import selenium.Builder.LoginPageBuilder;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import po.LoginNewPage;
+import selenium.po.LoginNewPage;
 
 
 import static org.assertj.core.api.Assertions.assertThat;

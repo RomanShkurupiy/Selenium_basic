@@ -1,12 +1,12 @@
-package po;
+package selenium.po;
 
-import base.BaseMethod;
-import base.Table;
-import base.TableNew;
+import selenium.base.BaseMethod;
+import selenium.base.Table;
+import selenium.base.TableNew;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static util.JSActions.jsClick;
+import static selenium.util.JSActions.jsClick;
 
 public class ActionPage extends BaseMethod {
     private final By doubleClick = By.xpath("//button[@id='doubleClickBtn']");
