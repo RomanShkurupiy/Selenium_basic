@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Simple">
     <listeners>
-    <listener class-name="Listeners.RetryAnalyzer"/>
+    <listener class-name="selenium.Listeners.RetryAnalyzer"/>
     </listeners>
 
     <test name="Search/Login">
@@ -16,8 +16,9 @@
             </run>
         </groups>
         <classes>
-            <class name="LoginNewTest"/>
-            <class name="SearchTest"/>
+            <class name="selenium.LoginNewTest"/>
+            <class name="selenium.SearchTest"/>
+            <class name="selenide.SearchTest"/>
         </classes>
     </test>
 </suite>

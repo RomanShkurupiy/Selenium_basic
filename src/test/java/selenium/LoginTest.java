@@ -1,5 +1,7 @@
+package selenium;
+
 import org.testng.annotations.Test;
-import po.LoginPage;
+import selenium.po.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 
@@ -10,6 +12,8 @@ public class LoginTest extends BaseTest{
 
         @Test(groups = {"Regression"})
         void checkLoginName() {
+                driver.get("https://ru.wikipedia.org/");
+                driver.manage().window().maximize();
                 login.clickEnterPage();
                 login.fillLogin(loginName);
                 login.fillPassword(password);

@@ -1,7 +1,9 @@
-import Builder.LoginPageBuilder;
+package selenium;
+
+import selenium.Builder.LoginPageBuilder;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import po.LoginNewPage;
+import selenium.po.LoginNewPage;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,6 +12,8 @@ public class LoginNewTest extends BaseTest{
 
     @Test(groups = "Smoke")
     void shouldBeEnterToTheSystem() {
+        driver.get("https://ru.wikipedia.org/");
+        driver.manage().window().maximize();
         new LoginNewPage()
                 .clicklogin();
         LoginNewPage login = new LoginPageBuilder()
@@ -25,6 +29,8 @@ public class LoginNewTest extends BaseTest{
 
     @Test(groups = "Regression", dataProvider = "password-verification")
     void testLoginCorrectPasswordWrong(String password) {
+        driver.get("https://ru.wikipedia.org/");
+        driver.manage().window().maximize();
         new LoginNewPage()
                 .clicklogin();
         LoginNewPage loginPassword = new LoginPageBuilder()
@@ -40,6 +46,8 @@ public class LoginNewTest extends BaseTest{
 
     @Test(groups = "Regression", dataProvider = "login-verification")
     void testLoginWrongPasswordCorrect(String login) {
+        driver.get("https://ru.wikipedia.org/");
+        driver.manage().window().maximize();
         new LoginNewPage()
                 .clicklogin();
         LoginNewPage loginPassword = new LoginPageBuilder()
@@ -67,7 +75,7 @@ public class LoginNewTest extends BaseTest{
     public Object [][] getLogin() {
         return new Object[][] {
                 {"           "},
-                {"RomanAQ"}
+                {"RomanAQ"},
                 {"Roman+/*"},
                 {"Roman1"}
         };
